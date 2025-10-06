@@ -14,17 +14,17 @@ class testCalculadora {
 	}
 	@Test
 	void testResta() {
-		assertEquals(5, Calcuradora.resta(2,3));
+		assertEquals(1, Calcuradora.resta(4,3));
 
 	}
 	@Test
 	void testMultiplica() {
-		assertEquals(5, Calcuradora.multiplica(2,3));
+		assertEquals(6, Calcuradora.multiplica(2,3));
 
 	}
 	@Test
 	void testDivide() {
-		assertEquals(5, Calcuradora.divide(2,3));
+		assertEquals(2, Calcuradora.divide(6,3));
 
 	}
 
