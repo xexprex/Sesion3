@@ -19,7 +19,7 @@ class TestCuenta {
 	
 	@BeforeEach
 	void setUp() throws Exception{
-		
+		cuenta.setSaldo(0.0);
 	}
 	
 	
