@@ -9,6 +9,8 @@ public class Cuenta {
 		String titular;
 		Double saldo;
 	
+		
+		//getter and setter
 		public String getNumero() {
 			return numero;
 		}
@@ -28,9 +30,7 @@ public class Cuenta {
 			this.saldo = saldo;
 		}
 		
-		
-		
-		
+		//Funciones
 		public void ingresar(Double i) {
 			saldo +=i ;			
 		}
