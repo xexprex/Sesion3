@@ -29,10 +29,6 @@ public class Movimiento {
 	}
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
-	}
-    
-	
-    
-	
+	}	
 	
 }

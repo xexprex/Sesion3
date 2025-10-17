@@ -11,15 +11,21 @@ import pkg.Cuenta;
 class TestCuenta {
 
 	private static Cuenta cuenta;
+	private static Cuenta cuenta1;
+	private static Cuenta cuenta2;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception{
 		cuenta = new Cuenta(0.0);
+		cuenta1 = new Cuenta(0.0);
+		cuenta2 = new Cuenta(0.0);
 	}
 	
 	@BeforeEach
 	void setUp() throws Exception{
 		cuenta.setSaldo(0.0);
+		cuenta1.setSaldo(0.0);
+		cuenta1.setSaldo(0.0);
 	}
 	
 	
@@ -44,25 +50,44 @@ class TestCuenta {
 	//Inicializacion
     @Test
     void testCuenta1() {
-        cuenta.setNumero("12345");
-        cuenta.setTitular("Pepe");
-        cuenta.setSaldo(100.0);
+        cuenta1.setNumero("12345");
+        cuenta1.setTitular("Pepe");
+        cuenta1.setSaldo(50.0);
 
-        assertEquals("12345", cuenta.getNumero());
-        assertEquals("Pepe", cuenta.getTitular());
-        assertEquals(100.0, cuenta.getSaldo());
+        assertEquals("12345", cuenta1.getNumero());
+        assertEquals("Pepe", cuenta1.getTitular());
+        assertEquals(50.0, cuenta1.getSaldo());
     }
 	
     @Test
     void testCuenta2() {
-        cuenta.setNumero("67890");
-        cuenta.setTitular("Juan");
-        cuenta.setSaldo(0.0);
+        cuenta2.setNumero("67890");
+        cuenta2.setTitular("Juan");
+        cuenta2.setSaldo(0.0);
 
-        assertEquals("67890", cuenta.getNumero());
-        assertEquals("Juan", cuenta.getTitular());
-        assertEquals(0.0, cuenta.getSaldo());
+        assertEquals("67890", cuenta2.getNumero());
+        assertEquals("Juan", cuenta2.getTitular());
+        assertEquals(0.0, cuenta2.getSaldo());
     }
 	
+    //Instrucciones para cuenta 1
+    
+    @Test
+    void testRetirarCuenta1() {
+        cuenta1.retirar(200.0);
+        assertEquals(-200.0, cuenta1.getSaldo());
+    }
+    
+    @Test
+    void testIngresarCuenta1() {
+        cuenta1.ingresar(100.0);
+        assertEquals(100.0, cuenta1.getSaldo());
+    }
+
+    @Test
+    void testRetirar2Cuenta1() {
+        cuenta1.retirar(200.0);
+        assertEquals(-200.0, cuenta1.getSaldo());
+    }
 
 }
