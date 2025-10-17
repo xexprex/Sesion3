@@ -2,13 +2,17 @@ package pkg;
 
 public class Cuenta {
 
-		public Cuenta(Double i) {
-		// TODO Auto-generated constructor stub
-	}
 		String numero;
 		String titular;
 		Double saldo;
 	
+		//Constructor
+		public Cuenta(double saldo, String numero) {
+			this.saldo=saldo;
+			this.numero=numero;
+		}
+		
+		
 		public String getNumero() {
 			return numero;
 		}
@@ -29,14 +33,14 @@ public class Cuenta {
 		}
 		
 		
-		
-		
 		public void ingresar(Double i) {
 			saldo +=i ;			
 		}
 		
-		public void retirar(Double i) {
-			saldo -= i;
-			
+		public void retirar(double cantidad) {
+		    if (saldo - cantidad >= -500)
+		        saldo -= cantidad;
+		    else
+		        System.out.println("Fondos insuficientes (saldo " + saldo + "€) en la cuenta " + numero + " para el retiro de " + cantidad);
 		}
 }
